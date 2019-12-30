@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    background-color:rgb(104, 32, 138) ;
+    background-image: url("../img/Star-Guardian-Xayah-Rakan-Splash-Art-LoL.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+.header{
+    
+    min-height: 8vh;
+    display: grid;
+    grid-template-columns: minmax(10%,30%) auto;    
+    position: relative;
+    padding: 0 2em;
+    .logo{
+        height: 8vh;
+                
+        img{            
+            height: 100%;
+        }
+    }
+
+    .nav-items{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        a{
+            margin-left:auto;
+            cursor: pointer;
+            color: white;       
+            margin-right: 3em;     
+            background: linear-gradient(to right, #ff512f, #dd2476); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding: .8em;
+            border-radius: 1em;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: bold;
+            display: inline-block;
+            &:hover {
+                border: 1px solid whitesmoke;
+             }
+        }
+    }
+
+}
+
+main{
+    height:92vh ;    
+    display: grid;
+    font-weight: bold;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70% 18%  12%;
+    .text-container{     
+        text-align: center;   
+        color: white;
+        height: 100%;
+        font-size: 6rem;   
+        display: flex;     
+        .text{
+            min-width: 60%;
+            max-width: 100%;
+            text-shadow: 2px 2px black;
+            margin: auto;
+        }
+    }
+    .register-btn-main{        
+        height: 100%;           
+        text-align: center;
+        cursor: pointer;
+        a{
+            color: white;       
+            font-size: 2rem;     
+            background: linear-gradient(to right, #ff512f, #dd2476); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding: .8em 2em;
+            border-radius: 1em;
+            text-decoration: none;            
+            font-weight: bold;            
+            display: inline-block;
+            &:hover {
+               border: 1px solid whitesmoke;
+            }
+        }
+    }
+    footer{
+        background: rgba(0, 0, 0, 0.274);
+        height: 100%;
+        display: flex;
+        color: rgb(184, 184, 184);        
+        .footer-text {            
+            margin: auto;
+            display: inline;
+            text-align: center;
+        }          
+    }   
+}
+
+
+.modal{
+    display: none;
+    padding: 50px;
+    position: absolute;
+    box-shadow: -1px 2px 2000px 2000px #dd247736;
+    left: 50%;
+    transform: translate(-50%,10%);    
+    width: 500px;    
+    height: 700px;
+    background: whitesmoke;
+    a{        
+        position: absolute;
+        right: 1em;
+        margin-top: -2rem;        
+        text-decoration: none;
+        color: #333;
+        cursor: pointer;
+        font-size: 2em;
+        &:hover{
+            color: #dd2476; 
+        }
+    }
+        .modal-container{
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows:20% 1fr 1fr 1fr;
+            .modal-header{            
+                text-align: center;
+                font-size: 2em;
+                font-weight: bolder;            
+            }
+
+            .input-container{
+                label{
+                    font-weight: 700;
+                    font-size: 1.5em;
+                    color: #333;                
+                }                
+                input,select{
+                    display: block;
+                    height: 40%;
+                    border-radius:3rem;
+                    width: 100%;
+                    padding: 0 2em;
+                    font-size: 130%;
+                    border: none;
+                    margin-top: .3rem;
+                    background-color: rgb(235, 230, 230);                
+                    &[type=submit]{
+                        background: linear-gradient(to right, #ff512f, #dd2476);
+                        color: whitesmoke;
+                        cursor: pointer;
+                    }
+                }                   
+                ::placeholder{                
+                    font-weight: bolder;
+                    color: rgb(149, 149, 149);
+                }
+            }
+        }
+        #modal-container-register{
+            grid-template-rows:10% 1fr 1fr 1fr 1fr 1fr;
+        }   
+}
+
+
+
+@media screen and (max-width:690px){
+    .text-container .text{
+        font-size: 4rem;
+    }
+    .nav-items a{
+        margin-right: 0em;
+    }
+    .modal{
+        width: 90%;
+        height: 60%;
+    }
+}

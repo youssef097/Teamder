@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teamder - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+        <div class="nav-items">
+            <a onclick="hide('login')" class="register-btn-nav">Login</a>
+        </div>
+    </div>
+
+
+    <main>
+        <div class="text-container">
+            <div class="text">
+                Find your perfect premade and get challenger
+            </div>
+        </div>
+        <div class="register-btn-main">
+            <a onclick="hide('register')">Register</a>
+        </div>
+
+        <footer>
+            <div class="footer-text">
+                Hecho por Youssef Lehchiki <br>
+                Sin ánimo de lucro - Solo para fines de aprendizaje <br>
+                <small style="font-weight: 100;">el.callosino12@gmail.com</small>
+            </div>
+        </footer>
+
+
+        <div class="modal">
+            <a id="close" onclick="hide()"> &#10006</a>
+            <form action="/login" method="POST" id="modal-container-login" class="modal-container">
+                <div class="modal-header">
+                    Login
+                </div>
+                <div class="input-container">
+                    <label for="username">
+                        Username
+                    </label>
+                    <input type="text" name="username" id="username" required placeholder="Username or email">
+                </div>
+                <div class="input-container">
+                    <label for="username">
+                        Password
+                    </label>
+                    <input type="Password" name="password" id="password" required placeholder="Password">
+                </div>
+                <div class="input-container">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+
+            <form action="/register" method="POST" id="modal-container-register" class="modal-container">
+                <div class="modal-header">
+                    Register
+                </div>
+                <div class="input-container">
+                    <label for="username">
+                        Username
+                    </label>
+                    <input type="text" name="username" id="username-register" required placeholder="Username">
+                </div>
+                <div class="input-container">
+                    <label for="email">
+                        e-mail
+                    </label>
+                    <input type="email" name="email" id="email" required placeholder="e-mail">
+                </div>
+                <div class="input-container">
+                    <label for="username">
+                        Password
+                    </label>
+                    <input type="Password" name="password" id="password-register" required placeholder="Password">
+                </div>
+                <div class="input-container">
+                    <label for="repeat">
+                        Repeat password
+                    </label>
+                    <select name="server" id="server">
+                        <option value="euw">Europe West</option>
+                        <option value="eun">Europe North and Est</option>
+                        <option value="jp">Japan</option>
+                        <option value="kr">Korea</option>
+                        <option value="lan">Latam North</option>
+                        <option value="las">Latam South</option>
+                        <option value="na">North America</option>
+                        <option value="oc">Oceania</option>
+                        <option value="ru">Russia</option>
+                        <option value="tr">Turkey</option>
+                    </select>
+                    
+                </div>
+
+                <div class="input-container">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        var hidden = true;
+
+        function hide(status) {//Login or register
+            console.log(status);
+            if (status == "login") {
+                document.querySelector("#modal-container-login").style.display = "grid"
+                document.querySelector("#modal-container-register").style.display = "none"
+            } else {//Register
+                document.querySelector("#modal-container-login").style.display = "none"
+                document.querySelector("#modal-container-register").style.display = "grid"
+            }
+            if (hidden) {
+                document.querySelector(".modal").style.display = "inline"
+                hidden = false
+            } else {
+                document.querySelector(".modal").style.display = "none"
+                hidden = true
+            }
+        }
+
+    </script>
+</body>
+
+</html>
